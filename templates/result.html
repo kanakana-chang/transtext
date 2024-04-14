@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Translation Result</title>
+  </head>
+  <body class="bg-primary-subtle">
+    <header>
+      <nav class="navbar bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Translation App</a>
+        </div>
+      </nav>
+    </header>
+    <div class="container pt-5">
+      <h1>Translation Result</h1>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="card">
+            <div class="card-header text-bg-primary">原文</div>
+            <div class="card-body">
+              <p class="card-text">{{ original_text }}</p>
+            </div>
+          </div>
+          <br />
+          <div class="card">
+            <div class="card-header text-bg-info">翻訳されたテキスト</div>
+            <div class="card-body">
+              <p class="card-text">{{ translated_text }}</p>
+            </div>
+          </div>
+          <br />
+          <!--<a
+            href="/"
+            class="btn btn-primary btn-lg"
+            style="
+              --bs-btn-padding-y: 0.5rem;
+              --bs-btn-padding-x: 1rem;
+              --bs-btn-font-size: 1rem;
+            "
+          >
+            別のテキストを翻訳する
+          </a>-->
+          <button
+            type="button"
+            class="btn-custom-size"
+            onclick="location.href='/'"
+          >
+            別のテキストを翻訳する
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
